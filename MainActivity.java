@@ -10,14 +10,12 @@ import android.content.Intent;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity {
 
-//   Intent intentEnviar = getIntent();
-//   String mensaje = intentEnviar.getStringExtra(MainActivity.EXTRA_MESSAGE);
-// textViewVista = findViewById(R.id.EnviarTexto);
-// textViewVista.getText(mensaje);
-
     private EditText EnviarTexto;
+    private TextView TextoVista;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         EnviarTexto = (EditText)findViewById(R.id.EnviarTexto);
+
+        TextoVista = (TextView)findViewById(R.id.TextoVista);
+        String dato1 = getIntent().getStringExtra("dato1");
+        TextoVista.setText((dato1));
     }
 
     // metodo boto siguiente actividad
