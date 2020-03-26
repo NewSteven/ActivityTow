@@ -18,17 +18,18 @@ public class ActividadDos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_actividad_dos);
 
-        EnviarTextoTwo = (EditText)findViewById(R.id.EnviarTexto);
+        EnviarTextoTwo = (EditText)findViewById(R.id.EnviarTexto2);
 
-        TextoVista = (TextView)findViewById(R.id.TextoVista);
-        String dato1 = getIntent().getStringExtra("dato1");
-        TextoVista.setText((dato1));
+        TextoVista = (TextView)findViewById(R.id.TextoVista2);
+        String vista1 = getIntent().getStringExtra("vista1");
+        TextoVista.setText((vista1));
     }
 
     //metodo regresar actividad
     public void ActividadUno(View view){
-        Intent actividad_uno = new Intent(this, ActividadDos.class);
-        actividad_uno.putExtra("dato1", EnviarTextoTwo.getText().toString());
+        Intent actividad_uno = new Intent(this, MainActivity.class);
+        actividad_uno.putExtra("vista2", EnviarTextoTwo.getText().toString());
         startActivity(actividad_uno);
     }
 }
+
